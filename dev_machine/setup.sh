@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Exit on any error
-set -e
+# set -e
 
 # Update the system
 echo "Updating the system..."
@@ -19,9 +19,8 @@ git config --global user.email "javier.garcia.d@gmail.com"
 
 # Install and configure Poetry
 echo "Installing Poetry..."
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
-poetry config virtualenvs.in-project true
-poetry config virtualenvs.create true
+curl -sSL https://install.python-poetry.org | python3 -
+
 
 # Install NodeJS
 echo "Installing NodeJS..."
@@ -45,7 +44,7 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-sudo groupadd docker
+# check if group docker exists
 sudo usermod -aG docker $USER
 newgrp docker
 sudo systemctl enable docker.service
@@ -70,6 +69,9 @@ cp .zshrc ~/.zshrc
 
 
 
+# configure poetry
+poetry config virtualenvs.in-project true
+poetry config virtualenvs.create true
 
 
 
