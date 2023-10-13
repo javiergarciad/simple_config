@@ -103,8 +103,7 @@ export LANG=en_US.UTF-8
 #  alias make='noglob make'
 
 # MY paths
-
-export PATH="/home/javier/.local/bin:$PATH"
+export PATH="~/.local/bin:$PATH"
 export PATH="/usr/bin:$PATH"
 
 alias python=python3
