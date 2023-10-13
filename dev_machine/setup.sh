@@ -17,21 +17,6 @@ echo "Setting up Git..."
 git config --global user.name "javier Garcia"
 git config --global user.email "javier.garcia.d@gmail.com"
 
-# Install oh-my-zsh
-echo "Installing Oh-My-Zsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-chsh -s $(which zsh)
-
-# Install ZSH plugins
-echo "Installing ZSH plugins..."
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
-
-# Replace .zshrc
-echo "Replacing .zshrc..."
-cp .zshrc ~/.zshrc
-
 # Install and configure Poetry
 echo "Installing Poetry..."
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
@@ -65,6 +50,22 @@ sudo usermod -aG docker $USER
 newgrp docker
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
+
+
+# Install oh-my-zsh
+echo "Installing Oh-My-Zsh..."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+chsh -s $(which zsh)
+
+# Install ZSH plugins
+echo "Installing ZSH plugins..."
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+
+# Replace .zshrc
+echo "Replacing .zshrc..."
+cp .zshrc ~/.zshrc
 
 
 
