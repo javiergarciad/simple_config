@@ -14,7 +14,7 @@ sudo apt install -y python3 python3-pip python3-venv curl zsh git
 
 # Git Config
 echo "Setting up Git..."
-git config --global user.name "javier Garcia"
+git config --global user.name "Javier Garcia"
 git config --global user.email "javier.garcia.d@gmail.com"
 
 # Install and configure Poetry
@@ -65,8 +65,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.
 # Replace .zshrc
 echo "Replacing .zshrc..."
 cp .zshrc ~/.zshrc
-
-
+cp .aliases ~/.aliases
 
 
 # configure poetry

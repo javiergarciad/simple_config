@@ -1,0 +1,9 @@
+
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:/usr/bin"
+export PATH="$PATH:$HOME/scripts"
+# AIRFLOW
+export AIRFLOW__CORE__LOAD_EXAMPLES=False
+export AIRFLOW__DATABASE__LOAD_DEFAULT_CONNECTIONS=False
+export AIRFLOW__CORE__DAGS_FOLDER=$HOME/dev/airflow-dags/dags
+export AIRFLOW__CORE__PLUGINS_FOLDER=$HOME/dev/airflow-dags/plugins
